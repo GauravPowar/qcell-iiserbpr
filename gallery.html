@@ -63,28 +63,75 @@
         <section id="gallery" class="page-content">
             <div class="page-layout">
                 <div class="gallery-header">
-                    <h1>Gallery & Hall of Fame</h1>
-                    <p>A tribute to our brightest quizzers and memorable moments.</p>
+                    <h1>Gallery</h1>
+                    <p>Moments from our events — quizzes, competitions, and everything in between.</p>
                 </div>
+
+                <!-- April 2026: Medhastra -->
+                <div class="gallery-event-section">
+                    <h2>🏆 Medhastra 2026</h2>
+                    <p class="gallery-event-meta">April 2026 · Inter-Institute Quiz hosted at IISER Berhampur</p>
+                    <div class="gallery-grid">
+                        <div class="gallery-item" data-src="gallery/PXL_20260411_091440287.jpg" data-caption="Medhastra 2026 — Inter-Institute Quiz, IISER Berhampur">
+                            <img src="gallery/PXL_20260411_091440287.jpg" alt="Medhastra 2026 - Photo 1" loading="lazy">
+                            <div class="gallery-item-overlay"><span>🔍 View</span></div>
+                        </div>
+                        <div class="gallery-item" data-src="gallery/PXL_20260411_091827326.jpg" data-caption="Medhastra 2026 — Inter-Institute Quiz, IISER Berhampur">
+                            <img src="gallery/PXL_20260411_091827326.jpg" alt="Medhastra 2026 - Photo 2" loading="lazy">
+                            <div class="gallery-item-overlay"><span>🔍 View</span></div>
+                        </div>
+                        <div class="gallery-item" data-src="gallery/PXL_20260411_091900401.PORTRAIT.jpg" data-caption="Medhastra 2026 — Inter-Institute Quiz, IISER Berhampur">
+                            <img src="gallery/PXL_20260411_091900401.PORTRAIT.jpg" alt="Medhastra 2026 - Photo 3" loading="lazy">
+                            <div class="gallery-item-overlay"><span>🔍 View</span></div>
+                        </div>
+                        <div class="gallery-item" data-src="gallery/PXL_20260411_092026809.PORTRAIT.jpg" data-caption="Medhastra 2026 — Inter-Institute Quiz, IISER Berhampur">
+                            <img src="gallery/PXL_20260411_092026809.PORTRAIT.jpg" alt="Medhastra 2026 - Photo 4" loading="lazy">
+                            <div class="gallery-item-overlay"><span>🔍 View</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- September 2025: Invenio Quiz -->
+                <div class="gallery-event-section">
+                    <h2>⚡ Invenio Quiz 2025</h2>
+                    <p class="gallery-event-meta">September 2025 · Invenio Quiz Competition</p>
+                    <div class="gallery-grid">
+                        <div class="gallery-item" data-src="gallery/IMG_20250912_215109624.jpg" data-caption="Invenio Quiz 2025">
+                            <img src="gallery/IMG_20250912_215109624.jpg" alt="Invenio Quiz 2025" loading="lazy">
+                            <div class="gallery-item-overlay"><span>🔍 View</span></div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Hall of Fame -->
                 <h2 class="section-heading">Hall of Fame</h2>
                 <div class="card-container">
                     <div class="card hall-of-fame-card">
-                        <h3>Intra-College Fest '25</h3>
-                        <p>Winners: The Inquisitors</p>
+                        <h3>Medhastra '26</h3>
+                        <p>Inter-Institute Quiz hosted at IISER Berhampur</p>
                     </div>
                     <div class="card hall-of-fame-card">
-                        <h3>MELA Quiz '25</h3>
-                        <p>Winners: Artsy Folks</p>
+                        <h3>Invenio Quiz '25</h3>
+                        <p>Inter-college Quiz Competition</p>
                     </div>
                     <div class="card hall-of-fame-card">
-                        <h3>STEM Quiz '24</h3>
-                        <p>Winners: The Catalysts</p>
+                        <h3>QPL</h3>
+                        <p>Annual Intra-College Quiz Premiere League</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox-overlay">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8592;</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&#8594;</button>
+    </div>
+
 
     <!-- Main Site Footer -->
     <footer class="site-footer">

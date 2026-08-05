@@ -366,4 +366,61 @@ document.addEventListener('DOMContentLoaded', () => {
         startNewQuizTest();
     }
 
-});
+    // --- GALLERY LIGHTBOX ---
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+
+    if (galleryItems.length && lightbox) {
+        let currentIndex = 0;
+        const items = Array.from(galleryItems);
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const item = items[currentIndex];
+            lightboxImg.src = item.dataset.src || item.querySelector('img').src;
+            lightboxCaption.textContent = item.dataset.caption || '';
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            openLightbox(currentIndex);
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % items.length;
+            openLightbox(currentIndex);
+        }
+
+        items.forEach((item, idx) => {
+            item.addEventListener('click', () => openLightbox(idx));
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', showPrev);
+        lightboxNext.addEventListener('click', showNext);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        });
+    }
+
+});
