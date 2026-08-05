@@ -523,6 +523,8 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     justify-content: center;
+    justify-items: center;
+    align-items: stretch;
     gap: 1.8rem;
     width: 100%;
     max-width: 1240px;
@@ -554,13 +556,21 @@ p {
     border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.card h3,
+.card h4,
+.card p {
+    text-align: center !important;
 }
 
 .card:hover {
@@ -578,26 +588,28 @@ p {
     color: var(--primary-color);
 }
 
-/* Blog Card Slider */
+/* Blog Cards Centered Container */
 .card-slider-container {
     display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;
-    padding: 1rem 0;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 1.8rem;
     width: 100%;
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-color) var(--background-color);
+    max-width: 1240px;
+    margin: 1.5rem auto 0;
 }
 
 .blog-card {
-    flex: 0 0 320px;
+    flex: 1 1 300px;
+    max-width: 380px;
 }
 
 .know-more {
     margin-top: 1rem;
     color: var(--primary-color);
     font-weight: 600;
-    text-align: right;
+    text-align: center;
     transition: letter-spacing 0.3s ease;
 }
 
@@ -1007,34 +1019,15 @@ p {
 
 /* --- Responsive Design --- */
 @media (min-width: 1024px) {
-    .page-content:not(#home) {
-        padding-right: calc(350px + 10%);
+    .page-content {
+        padding: 110px 5% 80px;
+        align-items: center;
     }
 
     .page-layout {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    #blogs .page-layout,
-    #coordinators .page-layout,
-    #contact .page-layout,
-    #updates .page-layout,
-    #quiz .page-layout,
-    #gallery .page-layout {
         align-items: center;
-    }
-
-    .three-container {
-        position: fixed;
-        top: 50%;
-        right: 5%;
-        transform: translateY(-50%);
-        width: 350px;
-        height: 350px;
-        margin: 0;
-        z-index: 10;
-        backdrop-filter: blur(5px);
+        margin: 0 auto;
     }
 
     .social-toggle-btn {
