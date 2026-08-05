@@ -551,6 +551,21 @@ p {
     box-shadow: 0 0 20px rgba(233, 30, 99, 0.4);
 }
 
+.coordinator-cards.single-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1240px;
+    margin: 1.5rem auto 2.5rem;
+}
+
+.coordinator-cards.single-card-container .card {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
 .coordinator-cards.vice-coordinators-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
